@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { ITheme } from './interfaces/theme';
-import { IPost } from './interfaces/post';
+
+import { IPost } from './shared/interfaces/post';
+import { ITheme } from './shared/interfaces/theme';
 
 const apiUrl = environment.apiURL;
 
@@ -15,6 +16,10 @@ export class ApiService {
 
   loadThemes() {
     return this.httpClient.get<ITheme[]>(`${apiUrl}/themes`);
+  }
+
+  loadTheme(id: number) {
+    return this.httpClient.get<ITheme>(`${apiUrl}/themes/${id}`);
   }
 
   // TODO set limit to posts shown
