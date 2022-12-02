@@ -7,6 +7,7 @@ import { NewThemeComponent } from './new-theme/new-theme.component';
 import { ThemeDetailComponent } from './theme-detail/theme-detail.component';
 import { MainComponent } from './main/main.component';
 import { RecentPostComponent } from './recent-post/recent-post.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -21,7 +22,8 @@ import { RecentPostComponent } from './recent-post/recent-post.component';
   imports: [
     CommonModule,
     SharedModule,
-    ThemeRoutingModule
+    ThemeRoutingModule,
+    FormsModule
   ],
   exports: [
     ThemeListComponent
